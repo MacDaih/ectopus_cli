@@ -2,6 +2,7 @@ import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getMetrics } from '../store/action/report';
 import { renderLineChart } from '../components/display/line-chart.component';
+import PropTypes from 'prop-types';
 
 class ChartsComponent extends Component {
     constructor(props) {
@@ -19,6 +20,10 @@ class ChartsComponent extends Component {
         );
     }
 }
+
+ChartsComponent.propTypes = {
+    metric: PropTypes.object
+};
 
 const mapStateToProps = state => ({
     metric: state.report.metric

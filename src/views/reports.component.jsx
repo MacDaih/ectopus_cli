@@ -1,9 +1,11 @@
 import { React, Component } from 'react';
 import { connect } from 'react-redux';
 import { getReports } from '../store/action/report';
-import { ReportCardComponent } from '../components/display/report-car.component';
+import { ReportCardComponent } from '../components/display/report-card.component';
 import { TitleComponent } from '../components/display/title.component';
+import { PropTypes } from 'prop-types';
 import styles from './layout.module.css';
+
 
 class ReportsComponent extends Component {
     constructor(props) {
@@ -34,6 +36,11 @@ class ReportsComponent extends Component {
         )
     }
 };
+
+ReportsComponent.propTypes = {
+    reports: PropTypes.array
+};
+
 const mapStateToProps = state => ({
     reports: state.report.reports
 });
@@ -42,5 +49,4 @@ const mapDispatchToProps = dispatch => ({
         dispatch(getReports());
     }
 });
-  
 export default connect(mapStateToProps, mapDispatchToProps)(ReportsComponent);

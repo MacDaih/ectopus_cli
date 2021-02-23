@@ -1,4 +1,5 @@
 import { React, Component} from 'react';
+import { PropTypes } from 'prop-types';
 import styles from '../styles.module.css';
 
 export class TitleComponent extends Component {
@@ -13,3 +14,7 @@ export class TitleComponent extends Component {
         );
     }
 }
+
+TitleComponent.propTypes = {
+    title: PropTypes.string
+};

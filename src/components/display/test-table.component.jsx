@@ -1,9 +1,11 @@
 import { React, Component } from 'react';
+import { PropTypes } from 'prop-types';
 import styles from '../styles.module.css';
 
 const FILTERS = {
     body: 'body'
 };
+
 export class TestTableComponent extends Component {
     render() {
         const {
@@ -45,3 +47,7 @@ export class TestTableComponent extends Component {
         );
     }
 }
+
+TestTableComponent.propTypes = {
+    test: PropTypes.array
+};
