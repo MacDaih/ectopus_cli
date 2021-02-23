@@ -1,5 +1,5 @@
 # ectopus_cli
-Front End client app for Ectopus service
+Front End client app for Ectopus service : https://github.com/MacDaih/ectopus
 
 # Getting Started with Create React App
 
