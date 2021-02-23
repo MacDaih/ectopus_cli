@@ -1,0 +1,83 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header {
+    width:  100%;
+    justify-content: space-between;
+}
+.floatNav {
+    width: 25%;
+    justify-content: space-between;
+    display: flex;
+    padding: 1rem;
+}
+.logo {
+    padding: 0 1rem;
+}
+.container {
+    padding: 1rem;
+}
+.sep {
+    height: 1px;
+    width: 100%;
+    background-color: grey;
+}
+.navIcon {
+    font-size: larger;
+    background-color: #1d2f50;
+    color: white;
+    padding: 1rem;
+    border-radius: 25%;
+}
+.subRow {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mainIcon {
+    font-size: x-large;
+}
+.neutral {
+    color: gray;
+}
+.success {
+    color: green;
+}
+.failed {
+    color: red;
+}
+.headTitle {
+    font-weight: 200;
+    text-align: left;
+    padding: 1rem;
+}
+
+.testTab {
+    padding: 1rem;
+    width: 100%;
+}
+.testCell {
+    width: 33%;
+    font-weight: 200;
+    font-size: smaller;
+    text-align: left;
+}
+
+.slider {
+    display: block;
+    max-height: auto;
+	overflow: scroll;
+    animation: slide .7s ease-in-out;
+}
+
+@keyframes slide {
+    from { 
+        max-height: 0;
+    }
+    to { 
+        max-height: 100vh;
+    }
+}
