@@ -1,5 +1,113 @@
-# ectopus_cli
+# ECTOPUS_CLI
 Front End client app for Ectopus service : https://github.com/MacDaih/ectopus
+
+### Report
+
+Here's a json example of what a e2e report looks like :
+
+```{
+  "name": "your_project",
+  "start_at": "2021-02-03T20:03:54.883Z",
+  "end_at": "2021-02-11T20:03:57.654Z",
+  "duration": 1931,
+  "suites": 2,
+  "total_tests": 2,
+  "failed": 0,
+  "passed": 2,
+  "runs": [
+    {
+      "tests": [
+        {
+          "title": [
+            "My First Test",
+            "Does not do much!"
+          ],
+          "state": "failed",
+          "body": "function () {\n    expect((0, _display.upperTitle)(\"test\")).to.equal(\"TEST\");\n    expect(1).to.equal(2);\n  }",
+          "attempts": [
+            {
+              "state": "failed",
+              "videoTimestamp": null,
+              "duration": 53,
+              "started_at": "2021-02-11T20:03:54.887Z"
+            }
+          ],
+          "display_error": "AssertionError: expected 1 to equal 2\n    at Context.eval (http://localhost:51898/__cypress/tests?p=cypress/integration     /base.spec.js:303:18)"
+        },
+        {
+          "title": [
+            "My First Test",
+            "Second Test !"
+          ],
+          "state": "passed",
+          "body": "function () {\n    expect(1).to.equal(1);\n  }",
+          "displayError": null,
+          "attempts": [
+            {
+              "state": "passed",
+              "videoTimestamp": null,
+              "duration": 129,
+              "started_at": "2021-02-11T20:03:54.999Z"
+            }
+          ]
+        }
+      ],
+      "spec": {
+        "name": "base.spec.js",
+        "relative": "cypress/integration/base.spec.js",
+        "absolute": "your_projectcypress/integration/base.spec.js",
+        "spec_type": "integration"
+      },
+      "reporter_stats": {
+        "suites": 1,
+        "tests": 2,
+        "passes": 1,
+        "pending": 0,
+        "failures": 1,
+        "start": "2021-02-11T20:03:54.886Z",
+        "end": "2021-02-11T20:03:55.134Z",
+        "duration": 248
+      }
+    },
+    {
+      "tests": [
+        {
+          "title": [
+            "LANDING PAGE",
+            "Should Land"
+          ],
+          "state": "passed",
+          "body": "function () {\n    cy.visit('http://localhost:3000');\n  }",
+          "displayError": null,
+          "attempts": [
+            {
+              "state": "passed",
+              "videoTimestamp": null,
+              "duration": 904,
+              "started_at": "2021-02-11T20:03:56.748Z"
+            }
+          ]
+        }
+      ],
+      "spec": {
+        "name": "home.spec.js",
+        "relative": "cypress/integration/home.spec.js",
+        "absolute": "your_project/cypress/integration/home.spec.js",
+        "spec_type": "integration"
+      },
+      "reporter_stats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 1,
+        "pending": 0,
+        "failures": 0,
+        "start": "2021-02-08T20:03:55.971Z",
+        "end": "2021-02-11T20:03:57.663Z",
+        "duration": 1692
+      }
+    }
+  ]
+}```
 
 # Getting Started with Create React App
 
