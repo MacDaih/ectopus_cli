@@ -3,9 +3,11 @@ import { IoCloseCircle, IoCheckmarkCircleSharp, IoDocumentTextSharp } from 'reac
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { CgSandClock } from 'react-icons/cg';
 import { MdTimer } from 'react-icons/md';
+import { ReportDetailsComponent } from './report-details.component';
+import { parseDur, parseDate } from '../../utils/date-parser.utils';
 import styles from '../styles.module.css';
 import clsx from 'clsx';
-import { ReportDetailsComponent } from './report-details.component';
+
 export class ReportCardComponent extends Component {
     constructor(props) {
         super(props);
@@ -24,12 +26,8 @@ export class ReportCardComponent extends Component {
         const {
             report
         } = this.props;
-        const dur = report.duration / 1000;
-        const duration = dur.toString() + 's';
-        let  vec = report.start_at.replace('T',' ');
-        let split = vec.split('.');
-        split.pop();
-        const parsed = split[0]; 
+        const duration = parseDur(report.duration);
+        const date = parseDate(report.start_at);
         return (
             <div className={styles.container}>
                 <div className={styles.row}>
@@ -42,7 +40,7 @@ export class ReportCardComponent extends Component {
                     </div>
                     <div className={styles.subRow}>
                         <MdTimer className={clsx(styles.neutral,styles.mainIcon)}></MdTimer>
-                        <p>{parsed}</p>
+                        <p>{date}</p>
                     </div>
                     <div className={styles.subRow}>
                         <CgSandClock className={clsx(styles.neutral,styles.mainIcon)}></CgSandClock>

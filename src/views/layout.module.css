@@ -4,3 +4,7 @@
 .viewPort {
     width: 100%;
 }
+.vertiDisplay {
+    display: grid;
+    width: 100%;
+}
