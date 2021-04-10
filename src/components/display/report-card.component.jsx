@@ -1,5 +1,6 @@
 import { React, Component } from 'react';
-import { IoCloseCircle, IoCheckmarkCircleSharp, IoDocumentTextSharp } from 'react-icons/io5';
+import { IoCloseCircle, IoCheckmarkCircleSharp } from 'react-icons/io5';
+import { RiApps2Fill } from 'react-icons/ri';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { CgSandClock } from 'react-icons/cg';
 import { MdTimer } from 'react-icons/md';
@@ -32,8 +33,8 @@ export class ReportCardComponent extends Component {
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={styles.subRow}>
-                        <IoDocumentTextSharp className={clsx(styles.neutral,styles.mainIcon)}>
-                        </IoDocumentTextSharp>
+                        <RiApps2Fill className={clsx(styles.neutral,styles.mainIcon)}>
+                        </RiApps2Fill>
                         <p>
                             {report.name}
                         </p>
@@ -54,7 +55,7 @@ export class ReportCardComponent extends Component {
                         <IoCloseCircle  className={clsx(styles.failed,styles.mainIcon)}></IoCloseCircle>
                         <p>{report.failed} / {report.total_tests}</p>
                     </div>
-                    <IoMdArrowDropdown className={clsx(styles.neutral,styles.mainIcon)} onClick={this.displayDetails}></IoMdArrowDropdown>
+                    <IoMdArrowDropdown className={clsx(styles.neutral,styles.mainIcon,styles.actBtn)} onClick={this.displayDetails}></IoMdArrowDropdown>
                 </div>
                 {
                     this.state.details && <ReportDetailsComponent  details={ report.runs }/>
