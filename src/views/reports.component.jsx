@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getReports } from '../store/action/report';
 import { ReportCardComponent } from '../components/display/report-card.component';
 import { TitleComponent } from '../components/display/title.component';
+import { spinner } from '../components/state/spinner';
 import { PropTypes } from 'prop-types';
 import styles from './layout.module.css';
 
@@ -28,9 +29,7 @@ class ReportsComponent extends Component {
                         />
                         ))
                         :
-                        (
-                            <div>No reports :(</div>
-                        )
+                        spinner()
                 }
             </div>
         )

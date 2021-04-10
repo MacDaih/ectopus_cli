@@ -1,0 +1,15 @@
+.tabCntr {
+    width: 100%;
+}
+.tabCntr table {
+    width: 100%;
+}
+
+table thead {
+    font-weight: 600;
+}
+
+table td {
+    text-align: left;
+    padding: 1rem;
+}

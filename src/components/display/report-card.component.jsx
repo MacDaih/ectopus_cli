@@ -1,11 +1,14 @@
 import { React, Component } from 'react';
-import { IoCloseCircle, IoCheckmarkCircleSharp, IoDocumentTextSharp } from 'react-icons/io5';
+import { IoCloseCircle, IoCheckmarkCircleSharp } from 'react-icons/io5';
+import { RiApps2Fill } from 'react-icons/ri';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { CgSandClock } from 'react-icons/cg';
 import { MdTimer } from 'react-icons/md';
+import { ReportDetailsComponent } from './report-details.component';
+import { parseDur, parseDate } from '../../utils/date-parser.utils';
 import styles from '../styles.module.css';
 import clsx from 'clsx';
-import { ReportDetailsComponent } from './report-details.component';
+
 export class ReportCardComponent extends Component {
     constructor(props) {
         super(props);
@@ -24,25 +27,21 @@ export class ReportCardComponent extends Component {
         const {
             report
         } = this.props;
-        const dur = report.duration / 1000;
-        const duration = dur.toString() + 's';
-        let  vec = report.start_at.replace('T',' ');
-        let split = vec.split('.');
-        split.pop();
-        const parsed = split[0]; 
+        const duration = parseDur(report.duration);
+        const date = parseDate(report.start_at);
         return (
             <div className={styles.container}>
                 <div className={styles.row}>
                     <div className={styles.subRow}>
-                        <IoDocumentTextSharp className={clsx(styles.neutral,styles.mainIcon)}>
-                        </IoDocumentTextSharp>
+                        <RiApps2Fill className={clsx(styles.neutral,styles.mainIcon)}>
+                        </RiApps2Fill>
                         <p>
                             {report.name}
                         </p>
                     </div>
                     <div className={styles.subRow}>
                         <MdTimer className={clsx(styles.neutral,styles.mainIcon)}></MdTimer>
-                        <p>{parsed}</p>
+                        <p>{date}</p>
                     </div>
                     <div className={styles.subRow}>
                         <CgSandClock className={clsx(styles.neutral,styles.mainIcon)}></CgSandClock>
@@ -56,7 +55,7 @@ export class ReportCardComponent extends Component {
                         <IoCloseCircle  className={clsx(styles.failed,styles.mainIcon)}></IoCloseCircle>
                         <p>{report.failed} / {report.total_tests}</p>
                     </div>
-                    <IoMdArrowDropdown className={clsx(styles.neutral,styles.mainIcon)} onClick={this.displayDetails}></IoMdArrowDropdown>
+                    <IoMdArrowDropdown className={clsx(styles.neutral,styles.mainIcon,styles.actBtn)} onClick={this.displayDetails}></IoMdArrowDropdown>
                 </div>
                 {
                     this.state.details && <ReportDetailsComponent  details={ report.runs }/>

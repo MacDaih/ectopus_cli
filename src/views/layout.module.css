@@ -3,4 +3,10 @@
 }
 .viewPort {
     width: 100%;
+    z-index: 0;
+    background-color: rgb(26, 30, 36);
+}
+.vertiDisplay {
+    display: grid;
+    width: 100%;
 }
