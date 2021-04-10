@@ -83,10 +83,12 @@
     width: 100%;
 }
 .slider {
+    color: rgb(0, 204, 255);
     display: block;
     max-height: auto;
 	overflow: scroll;
     animation: slide .7s ease-in-out;
+    background-color: #1a2333;
 }
 
 @keyframes slide {
