@@ -90,8 +90,8 @@ Here's a json example of what a e2e report looks like :
             }
         }
     ]
-}```
-
+}
+```
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
